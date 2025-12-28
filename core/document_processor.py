@@ -4,7 +4,7 @@ from langchain_core.documents import Document
 from langchain_community.document_loaders import TextLoader, PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-from config.settings import Settings
+from config.settings import settings
 
 
 class DocumentProcessor:
@@ -26,8 +26,8 @@ class DocumentProcessor:
             chunk_size: Maximum size of each text chunk (default from settings)
             chunk_overlap: Overlap between chunks to maintain context
         """
-        self.chunk_size = chunk_size or Settings.CHUNK_SIZE
-        self.chunk_overlap = chunk_overlap or Settings.CHUNK_OVERLAP
+        self.chunk_size = chunk_size or settings.CHUNK_SIZE
+        self.chunk_overlap = chunk_overlap or settings.CHUNK_OVERLAP
         
         # Initialize the text splitter
         self.text_splitter = RecursiveCharacterTextSplitter(

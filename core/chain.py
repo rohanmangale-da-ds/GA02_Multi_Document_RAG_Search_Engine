@@ -4,7 +4,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_groq import ChatGroq
 
-from config.settings import Settings
+from config.settings import settings
 from core.vector_store import VectorStoreManager
 
 
@@ -45,14 +45,14 @@ class RAGChain:
             temperature: LLM temperature (default from settings)
         """
         self.vector_store = vector_store_manager
-        self.model_name = model_name or Settings.LLM_MODEL
-        self.temperature = temperature if temperature is not None else Settings.LLM_TEMPERATURE
+        self.model_name = model_name or settings.LLM_MODEL
+        self.temperature = temperature if temperature is not None else settings.LLM_TEMPERATURE
         
         # Initialize Groq LLM
         self._llm = ChatGroq(
             model=self.model_name,
             temperature=self.temperature,
-            api_key=Settings.GROQ_API_KEY
+            api_key=settings.GROQ_API_KEY
         )
         
         # Initialize prompt template

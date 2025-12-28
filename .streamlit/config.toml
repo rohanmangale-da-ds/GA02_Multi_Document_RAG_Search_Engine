@@ -1,8 +1,8 @@
 [theme]
-primaryColor = "#FF6B35"
-backgroundColor = "#FFF8F3"
-secondaryBackgroundColor = "#FFE5CC"
-textColor = "#262730"
+primaryColor = "#ffffffff"
+backgroundColor = "#292929ff"
+secondaryBackgroundColor = "#19191aff"
+textColor = "#F8FAFC"
 font = "sans serif"
 
 [client]
@@ -10,3 +10,4 @@ showErrorDetails = true
 
 [logger]
 level = "info"
+

@@ -1,4 +1,4 @@
-from config.settings import Settings
+
 from core.embeddings import EmbeddingManager
 from core.vector_store import VectorStoreManager
 from core.document_processor import DocumentProcessor

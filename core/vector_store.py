@@ -3,7 +3,7 @@ from typing import List, Optional
 from langchain_core.documents import Document
 from langchain_community.vectorstores import FAISS
 
-from config.settings import Settings
+from config.settings import settings
 from core.embeddings import EmbeddingManager
 
 
@@ -22,7 +22,7 @@ class VectorStoreManager:
         """
         self.embedding_manager = embedding_manager or EmbeddingManager()
         self._vector_store: Optional[FAISS] = None
-        self.index_path = Settings.FAISS_INDEX_PATH
+        self.index_path = settings.FAISS_INDEX_PATH
     
     @property
     def vector_store(self) -> Optional[FAISS]:
@@ -86,7 +86,7 @@ class VectorStoreManager:
         if not self.is_initialized:
             raise ValueError("Vector store is not initialized. Add documents first.")
 
-        k = k or Settings.TOP_K_RESULTS
+        k = k or settings.TOP_K_RESULTS
         return self._vector_store.similarity_search(query, k=k)
     
     def search_with_scores(self, query: str, k: int = None) -> List[tuple]:
@@ -102,8 +102,8 @@ class VectorStoreManager:
         """
         if not self.is_initialized:
             raise ValueError("Vector store is not initialized. Add documents first.")
-        
-        k = k or Settings.TOP_K_RESULTS
+
+        k = k or settings.TOP_K_RESULTS
         return self._vector_store.similarity_search_with_score(query, k=k)
     
     def save(self, path: str = None) -> None:
@@ -154,8 +154,8 @@ class VectorStoreManager:
         """
         if not self.is_initialized:
             raise ValueError("Vector store is not initialized.")
-        
-        k = k or Settings.TOP_K_RESULTS
+
+        k = k or settings.TOP_K_RESULTS
         return self._vector_store.as_retriever(
             search_type="similarity",
             search_kwargs={"k": k}

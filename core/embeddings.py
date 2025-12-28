@@ -1,7 +1,7 @@
 from typing import List
 from langchain_huggingface import HuggingFaceEmbeddings
 
-from config.settings import Settings
+from config.settings import settings
 
 
 class EmbeddingManager:
@@ -17,7 +17,7 @@ class EmbeddingManager:
         Args:
             model_name: HuggingFace model name (default from settings)
         """
-        self.model_name = model_name or Settings.EMBEDDING_MODEL
+        self.model_name = model_name or settings.EMBEDDING_MODEL
         
         # Initialize HuggingFace embeddings (downloads model on first use)
         self._embeddings = HuggingFaceEmbeddings(

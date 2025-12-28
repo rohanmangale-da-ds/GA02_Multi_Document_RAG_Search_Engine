@@ -1,11 +1,11 @@
 import streamlit as st
 
 # Import configuration and validate settings
-from config.settings import Settings
+from config.settings import settings
 
 # Validate API keys before anything else
 try:
-    Settings().validate()
+    settings.validate()
 except ValueError as e:
     st.error(f"⚠️ Configuration Error:\n\n{str(e)}")
     st.stop()
@@ -49,7 +49,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-
 def main():
     """Main application function."""
     
@@ -77,7 +76,8 @@ def main():
         
         if uploaded_files:
             # Process button
-            if st.button("🚀 Process Documents", type="primary"):
+            
+            if st.button("🚀 Process Documents", type="secondary"):
                 with st.spinner("Processing documents..."):
                     try:
                         num_chunks = chat.process_uploaded_files(uploaded_files)

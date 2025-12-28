@@ -2,7 +2,7 @@ import os
 from typing import List, Optional, Literal
 from langchain_tavily import TavilySearch
 
-from config.settings import Settings
+from config.settings import settings
 
 
 class TavilySearchTool:
@@ -33,7 +33,7 @@ class TavilySearchTool:
         self.topic = topic
         
         # Set Tavily API key in environment (required by langchain-tavily)
-        os.environ["TAVILY_API_KEY"] = Settings.TAVILY_API_KEY
+        os.environ["TAVILY_API_KEY"] = settings.TAVILY_API_KEY
         
         # Initialize Tavily search
         self._search = TavilySearch(

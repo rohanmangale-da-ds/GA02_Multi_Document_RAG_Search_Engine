@@ -141,6 +141,7 @@ def display_processing_status(message: str, status: str = "info"):
 
 
 def create_web_search_toggle() -> bool:
+    
     """Create a toggle for web search."""
     return st.toggle(
         "🌐 Enable Web Search",
