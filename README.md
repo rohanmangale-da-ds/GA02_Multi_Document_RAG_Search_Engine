@@ -1,1 +1,103 @@
-load pdf/txt -> chunking -> embedding -> rag-chain -> tavily -> ui
+Recording url - 
+Gmail - rohanmangale4001@gmail.com
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Multi-Document RAG Chatbot
+
+An AI-powered Research Assistant that allows users to upload documents and interact with them using Retrieval-Augmented Generation (RAG).
+It combines LLMs + vector search + optional web search to provide accurate, contextual, and explainable answers.
+
+### Key Features
+
+1. Upload and analyze multiple documents (PDF / TXT)
+2. Ask natural language questions over your documents
+3. Uses RAG (Retrieval-Augmented Generation)
+4. Optional Web Search (Tavily) integration
+5. Clean & modern Streamlit UI
+6. Modular, scalable architecture
+7. Built for research, legal, academic, and enterprise use cases
+
+### Tech Stack
+
+UI                -> 	Streamlit
+LLM	              ->  Groq (LLaMA 3.3 70b)
+Embeddings        ->	HuggingFace (sentence-transformers)
+Vector DB	        ->  FAISS
+Web Search	      ->  Tavily API
+Backend	          ->  Python
+Config Management	->  .env, settings.py
+Architecture	    ->  Modular + Clean
+
+
+### Project Structure
+```
+GA02_Multi_Document_RAG_Search_Engine/
+│
+├── .streamlit/
+│   └── config.toml              # UI theme configuration
+│
+├── config/
+│   ├── __init__.py
+│   └── settings.py              # Centralized configuration
+│
+├── core/
+│   ├── chain.py                 # RAG pipeline logic
+│   ├── document_processor.py    # Document parsing & chunking
+│   ├── embeddings.py            # Embedding generation
+│   └── vector_store.py          # FAISS vector store
+│
+├── tools/
+│   └── tavily_search.py         # Web search integration
+│
+├── ui/
+│   ├── chat_interface.py        # Chat UI logic
+│   └── components.py            # Reusable UI components
+│
+├── data/
+│   └── input_data/              # Uploaded PDFs
+│
+├── app.py                       # Streamlit entry point
+├── main.py                      # CLI entry (optional)
+├── requirements.txt
+├── pyproject.toml
+├── .env                         # Environment variables (ignored)
+├── .gitignore
+└── README.md
+```
+
+### How It Works (High Level)
+#### 1. Document Upload
+
+Users upload PDF or text documents.
+
+#### 2. Chunking & Embedding
+
+Documents are:
+
+Split into meaningful chunks
+
+Converted into embeddings using sentence-transformers
+
+#### 3. Vector Storage
+
+Embeddings are stored in a FAISS vector database for fast similarity search.
+
+#### 4. Query Processing
+
+When a user asks a question:
+
+Relevant chunks are retrieved
+
+Context is injected into the LLM prompt
+
+AI generates a grounded response
+
+#### 5. Optional Web Search
+
+If enabled:
+
+Tavily fetches fresh web data
+
+Results are merged with local document context
