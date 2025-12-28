@@ -54,7 +54,7 @@ class TavilySearchTool:
             query: Search query
             
         Returns:
-            Search results as formatted string
+            Search results as formatted string and url
         """
         results = self._search.invoke(query)
         return self._format_results(results)
@@ -67,7 +67,7 @@ class TavilySearchTool:
             results: Raw Tavily results dictionary
             
         Returns:
-            Formatted string of search results
+            Formatted string of search results and url
         """
         if not results:
             return "No search results found."
@@ -86,7 +86,7 @@ class TavilySearchTool:
                 url = result.get("url", "")
                 formatted_parts.append(f"[{i}] {title}\n{content}\nSource: {url}")
         
-        return "\n\n".join(formatted_parts) if formatted_parts else "No results found."
+        return "\n\n".join(formatted_parts) if formatted_parts else "No results found.", url
     
     def search_with_context(self, query: str) -> dict:
         """
