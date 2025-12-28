@@ -17,8 +17,9 @@ It combines LLMs + vector search + optional web search to provide accurate, cont
 ### 2. Getting required info from document
 <img width="1911" height="964" alt="image" src="https://github.com/user-attachments/assets/877b2ea8-90f2-461e-9c24-f0ff6b80172d" />
 
-### 3. Using Web Search When Information Is Not Available in Documents
-<img width="1915" height="962" alt="image" src="https://github.com/user-attachments/assets/932337fb-0d0f-4bf0-9e0a-b12448231923" />
+### 3. Using Web Search When Information Is Not Available in Documents (Includes Related Web Sources)
+<img width="1915" height="962" alt="image" src="https://github.com/user-attachments/assets/11f39939-1913-440a-be03-b2843cc60d2a" />
+
 
 
 ### ✨ Key Features
