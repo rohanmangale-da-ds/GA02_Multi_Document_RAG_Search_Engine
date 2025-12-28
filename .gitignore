@@ -1,14 +1,31 @@
-# Python-generated files
+# Python cache
 __pycache__/
-*.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
+*.py[cod]
+*.pyo
 
 # Virtual environments
-.venv
+.venv/
+env/
+venv/
 
+# Build artifacts
+build/
+dist/
+*.egg-info/
 
-# .env files
+# Environment variables
 .env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# UV lock file (optional)
+uv.lock

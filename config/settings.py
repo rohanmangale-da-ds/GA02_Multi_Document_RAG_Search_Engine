@@ -26,10 +26,10 @@ class Settings:
     LLM_MODEL:str = os.getenv("LLM_MODEL")
     LLM_TEMPERATURE:float =  float(os.getenv("LLM_TEMPERATURE", 0))
     EMBEDDING_MODEL:str = os.getenv("EMBEDDING_MODEL")
-    CHUNK_SIZE:int = int(os.getenv("CHUNK_SIZE"))
-    CHUNK_OVERLAP:int = int(os.getenv("CHUNK_OVERLAP"))
+    CHUNK_SIZE:int = int(os.getenv("CHUNK_SIZE", 1000))
+    CHUNK_OVERLAP:int = int(os.getenv("CHUNK_OVERLAP", 200))
     FAISS_INDEX_PATH:str = os.getenv("FAISS_INDEX_PATH")
-    TOP_K_RESULTS:int = int(os.getenv("TOP_K_RESULTS"))
+    TOP_K_RESULTS:int = int(os.getenv("TOP_K_RESULTS", 3))
 
 
     def validate(self) -> bool:
