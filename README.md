@@ -1,13 +1,25 @@
 Recording url - 
 Gmail - rohanmangale4001@gmail.com
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 ## Multi-Document RAG Chatbot
 
 An AI-powered Research Assistant that allows users to upload documents and interact with them using Retrieval-Augmented Generation (RAG).
 It combines LLMs + vector search + optional web search to provide accurate, contextual, and explainable answers.
+
+ 
+## SCREENSHOTS - 
+### 1. User Interface (UI)
+<img width="1915" height="965" alt="image" src="https://github.com/user-attachments/assets/95b27e0d-464b-4038-b9b9-bc13516b60be" />
+
+### 2. Getting required info from document
+<img width="1911" height="964" alt="image" src="https://github.com/user-attachments/assets/877b2ea8-90f2-461e-9c24-f0ff6b80172d" />
+
+### 3. Using Web Search When Information Is Not Available in Documents
+<img width="1915" height="962" alt="image" src="https://github.com/user-attachments/assets/932337fb-0d0f-4bf0-9e0a-b12448231923" />
+
 
 ### Key Features
 
