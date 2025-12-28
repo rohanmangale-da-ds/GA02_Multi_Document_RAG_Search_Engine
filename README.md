@@ -20,16 +20,16 @@ It combines LLMs + vector search + optional web search to provide accurate, cont
 7. Built for research, legal, academic, and enterprise use cases
 
 ### Tech Stack
-```
-UI                -> 	Streamlit
-LLM	              ->  Groq (LLaMA 3.3 70b)
-Embeddings        ->	HuggingFace (sentence-transformers)
-Vector DB	        ->  FAISS
-Web Search	      ->  Tavily API
-Backend	          ->  Python
-Config Management	->  .env, settings.py
-Architecture	    ->  Modular + Clean
-```
+
+1. UI                -> 	Streamlit
+2. LLM	              ->  Groq (LLaMA 3.3 70b)
+3. Embeddings        ->	HuggingFace (sentence-transformers)
+4. Vector DB	        ->  FAISS
+5. Web Search	      ->  Tavily API
+6. Backend	          ->  Python
+7. Config Management	->  .env, settings.py
+8. Architecture	    ->  Modular + Clean
+
 
 ### Project Structure
 ```
