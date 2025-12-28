@@ -20,7 +20,7 @@ It combines LLMs + vector search + optional web search to provide accurate, cont
 7. Built for research, legal, academic, and enterprise use cases
 
 ### Tech Stack
-
+```
 UI                -> 	Streamlit
 LLM	              ->  Groq (LLaMA 3.3 70b)
 Embeddings        ->	HuggingFace (sentence-transformers)
@@ -29,7 +29,7 @@ Web Search	      ->  Tavily API
 Backend	          ->  Python
 Config Management	->  .env, settings.py
 Architecture	    ->  Modular + Clean
-
+```
 
 ### Project Structure
 ```
