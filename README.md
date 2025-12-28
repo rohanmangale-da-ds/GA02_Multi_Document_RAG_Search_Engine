@@ -1,16 +1,16 @@
-Recording url - 
-Gmail - rohanmangale4001@gmail.com
+🎥 Recording url - 
+📩 Gmail - rohanmangale4001@gmail.com
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-## Multi-Document RAG Chatbot
+## 🤖 Multi-Document RAG Chatbot
 
 An AI-powered Research Assistant that allows users to upload documents and interact with them using Retrieval-Augmented Generation (RAG).
 It combines LLMs + vector search + optional web search to provide accurate, contextual, and explainable answers.
 
  
-## SCREENSHOTS - 
+## 📸 SCREENSHOTS - 
 ### 1. User Interface (UI)
 <img width="1915" height="965" alt="image" src="https://github.com/user-attachments/assets/95b27e0d-464b-4038-b9b9-bc13516b60be" />
 
@@ -21,7 +21,7 @@ It combines LLMs + vector search + optional web search to provide accurate, cont
 <img width="1915" height="962" alt="image" src="https://github.com/user-attachments/assets/932337fb-0d0f-4bf0-9e0a-b12448231923" />
 
 
-### Key Features
+### ✨ Key Features
 
 1. Upload and analyze multiple documents (PDF / TXT)
 2. Ask natural language questions over your documents
@@ -31,7 +31,7 @@ It combines LLMs + vector search + optional web search to provide accurate, cont
 6. Modular, scalable architecture
 7. Built for research, legal, academic, and enterprise use cases
 
-### Tech Stack
+### 💡 Tech Stack
 
 1. UI                -> 	Streamlit
 2. LLM	              ->  Groq (LLaMA 3.3 70b)
@@ -43,7 +43,7 @@ It combines LLMs + vector search + optional web search to provide accurate, cont
 8. Architecture	    ->  Modular + Clean
 
 
-### Project Structure
+### 📁 Project Structure
 ```
 GA02_Multi_Document_RAG_Search_Engine/
 │
@@ -79,7 +79,7 @@ GA02_Multi_Document_RAG_Search_Engine/
 └── README.md
 ```
 
-### How It Works (High Level)
+### ⚙️ How It Works (High Level)
 #### 1. Document Upload
 
 Users upload PDF or text documents.
@@ -113,3 +113,70 @@ If enabled:
 Tavily fetches fresh web data
 
 Results are merged with local document context
+
+### 🖥️ Running the App Locally
+1️⃣ Clone the repo
+git clone https://github.com/rohanmangale-da-ds/GA02_Multi_Document_RAG_Search_Engine.git
+cd GA02_Multi_Document_RAG_Search_Engine
+
+2️⃣ Create virtual environment
+python -m venv .venv
+source .venv/bin/activate   # Mac/Linux
+# OR
+.venv\Scripts\activate      # Windows
+
+3️⃣ Install dependencies
+pip install -r requirements.txt
+
+4️⃣ Create .env file
+GROQ_API_KEY=your_groq_api_key
+TAVILY_API_KEY=your_tavily_api_key
+
+
+⚠️ Do NOT commit .env to GitHub.
+
+5️⃣ Run the app
+streamlit run app.py
+
+### 🎨 UI Preview
+
+✔ Chat-style interface
+✔ Dark mode friendly
+✔ Document upload panel
+✔ Optional web search
+✔ Real-time responses
+
+### 🧠 Configuration
+
+All configuration lives in:
+
+config/settings.py
+
+
+Supports:
+
+Environment variables
+
+.env
+
+Streamlit secrets
+
+### 🛡️ Security
+
+No API keys stored in code
+
+.env is ignored
+
+Keys loaded securely at runtime
+
+### 🧪 Example Use Cases
+
+📄 Research paper Q&A
+
+⚖️ Legal document analysis
+
+🧠 Knowledge base assistant
+
+📚 Academic research
+
+🧪 Internal enterprise search
