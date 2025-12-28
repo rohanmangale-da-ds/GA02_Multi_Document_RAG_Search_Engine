@@ -99,7 +99,7 @@ class ChatInterface:
         # Web search enabled
         if use_web_search:
             # Get web search results
-            web_results = self.tavily_search.search(query)
+            web_results, url = self.tavily_search.search(query)
             
             # Get document results if available
             doc_results = []
@@ -165,14 +165,14 @@ class ChatInterface:
         sources = []
         
         # Get semantic search sources
-        if self.vector_store.is_initialized:
+        if self.vector_store.is_initialized and not use_web_search:
             docs = self.vector_store.search(query)
-            sources.extend(list(set(doc.metadata.get("source", "Unknown") for doc in docs)))
+            sources.append(", ".join(list(set(doc.metadata.get("source", "Unknown") for doc in docs))))
         
         # Get web search sources
         if use_web_search:
             web_results = self.tavily_search.search(query)
             if web_results:
-                sources.append("Web Search Results")
+                sources.append(f"Web Search Results - {url}")
         
         return sources
